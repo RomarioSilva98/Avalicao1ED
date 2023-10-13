@@ -155,7 +155,7 @@ public class ListaSimplesEncadeada<T extends Comparable<T>> extends Lista<T> {
     public T[] transformarEmVetor() {
         atual = primeiro;
         if (atual != null) {
-          Class<?> tipoElemento = atual.dado.getClass(); //verificar se a tipo de dados da lista encadeada
+          Class<?> tipoElemento = atual.dado.getClass(); //verificar o tipo de dados da lista encadeada
           T[] vetor = (T[]) Array.newInstance(tipoElemento, tamanho); //criar um vetor com o mesmo tipo
           transformarEmVetorRecursivo(primeiro, vetor, 0); //chamar o metodo recursivo
             return vetor;
