@@ -114,7 +114,7 @@ public class ListaSimplesEncadeada<T extends Comparable<T>> extends Lista<T> {
         return false;
     }
 
-//    comparar tamanhos das listas?
+//    comparar tamanhos das listas
     @Override
     public int compareTo(Lista<T> item) {
             if (item == null) {

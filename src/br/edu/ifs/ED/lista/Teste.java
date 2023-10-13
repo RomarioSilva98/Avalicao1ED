@@ -23,6 +23,8 @@ public class Teste {
 //        lista.limpar();
         System.out.println(lista);
 
+
+//        criar um vetor para receber o resultado do metodo
         Integer[] vetor = lista.transformarEmVetor();
 
         System.out.print("Vetor: ");
