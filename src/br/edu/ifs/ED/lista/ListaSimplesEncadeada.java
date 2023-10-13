@@ -114,6 +114,7 @@ public class ListaSimplesEncadeada<T extends Comparable<T>> extends Lista<T> {
         return false;
     }
 
+//    comparar tamanhos das listas?
     @Override
     public int compareTo(Lista<T> item) {
             if (item == null) {
@@ -128,8 +129,8 @@ public class ListaSimplesEncadeada<T extends Comparable<T>> extends Lista<T> {
                 return 0;
             }
     }
-
-    @Override
+//    metodo sem ser recursivo(teste)
+//    @Override
 //    public T[] transformarEmVetor() {
 //
 //        atual = primeiro;
@@ -154,16 +155,16 @@ public class ListaSimplesEncadeada<T extends Comparable<T>> extends Lista<T> {
     public T[] transformarEmVetor() {
         atual = primeiro;
         if (atual != null) {
-          Class<?> tipoElemento = atual.dado.getClass();
-          T[] vetor = (T[]) Array.newInstance(tipoElemento, tamanho);
-          transformarEmVetorRecursivo(primeiro, vetor, 0);
+          Class<?> tipoElemento = atual.dado.getClass(); //verificar se a tipo de dados da lista encadeada
+          T[] vetor = (T[]) Array.newInstance(tipoElemento, tamanho); //criar um vetor com o mesmo tipo
+          transformarEmVetorRecursivo(primeiro, vetor, 0); //chamar o metodo recursivo
             return vetor;
         }
 
-        return (T[]) new Object[tamanho];
+        return (T[]) new Object[tamanho]; //retornar o vetor com o mesmo tamanho da lista encadeada
     }
 
-    private int transformarEmVetorRecursivo(No<T> no, T[] vetor, int i) {
+    private int transformarEmVetorRecursivo(No<T> no, T[] vetor, int i) { // o metodo recebe um nó,o vetor e o indice como parametro
         if (no != null) {
             vetor[i] = no.dado;
             return transformarEmVetorRecursivo(no.proximo, vetor, i + 1);
